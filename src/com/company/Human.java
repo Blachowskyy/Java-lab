@@ -29,6 +29,26 @@ public class Human {
     }
 
     Animal pet;
-    Car car;
+    private Car car;
+
+    public Car getCar(){
+        return this.car;
+    }
+    public void buyCar(Car car){
+        if(this.salary > car.valueCar){
+            System.out.println("You can afford that car. It's now yours!");
+            this.car = car;
+        }
+        else if (this.salary > car.valueCar/12){
+            System.out.println("You bought a car on credit (no trudno :P)");
+            this.car = car;
+        }
+        else {
+            System.out.println("Your's salary is to low. You can buy it when you raise it :)");
+        }
+
+
+
+    }
 
 }

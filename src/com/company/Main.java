@@ -19,20 +19,17 @@ public class Main {
 	    me.age = 26;
 
 	    Car car = new Car("Volvo", "V70");
-	    me.car = car;
 	    car.year = 2000;
 	    car.fuelType = "diesel";
 	    car.mileage = 375214;
 	    car.horsePower = 235;
 	    car.engineCapacity = 2.5;
+	    car.valueCar = 7000.0;
 
-	    System.out.println(me.firstName + " " + me.lastName + " " + "have" + " " + me.car.producer + " " + me.car.model + " " + me.car.year);
 
-		me.setSalary(1600.0);
-		me.setSalary(-160.0);
-		me.getSalary();
-		me.setSalary(7000.0);
-		me.getSalary();
+	    me.setSalary(4000.0);
+		me.getCar();
+		me.buyCar(car);
 
 
     }

@@ -9,6 +9,7 @@ public class Car {
     public Integer mileage;
     public Integer horsePower;
     public Double engineCapacity;
+    public Double valueCar;
 
     public Car(String producer,String model) {
         this.producer = producer;
