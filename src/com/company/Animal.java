@@ -49,4 +49,7 @@ public class Animal {
             System.out.println("You are crazy, how dead pet can walk?");
         }
     }
+    public String toString(){
+        return spieces+" "+weight+" "+name;
+    }
 }

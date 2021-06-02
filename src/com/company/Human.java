@@ -1,4 +1,5 @@
 package com.company;
+import com.company.devices.Car;
 import java.util.Date;
 
 public class Human {
@@ -49,6 +50,9 @@ public class Human {
 
 
 
+    }
+    public String toString(){
+        return firstName+" "+lastName;
     }
 
 }
