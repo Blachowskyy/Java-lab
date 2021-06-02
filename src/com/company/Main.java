@@ -1,5 +1,6 @@
 package com.company;
 import com.company.devices.Car;
+import com.company.devices.Phone;
 public class Main {
 
     public static void main(String[] args) {
@@ -35,6 +36,11 @@ public class Main {
 		System.out.println(car2);
 		System.out.println(me);
 		System.out.println(dog);
+
+		Phone phone = new Phone("Xiaomi", "Mi10",2020);
+		System.out.println(phone);
+		phone.turnOn();
+		car.turnOn();
 
 
     }

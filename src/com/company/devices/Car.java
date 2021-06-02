@@ -1,15 +1,11 @@
 package com.company.devices;
 
-public class Car {
+public class Car extends Device {
 
     final String producer;
     final String model;
-    public Integer year;
-    public String fuelType;
-    public Integer mileage;
-    public Integer horsePower;
-    public Double engineCapacity;
     public Double valueCar;
+
 
     public Car(String producer,String model) {
         this.producer = producer;
@@ -28,5 +24,9 @@ public class Car {
     }
     public String toString(){
         return producer+" "+model+" "+valueCar;
+    }
+    @Override
+    public void turnOn(){
+        System.out.println("The engine of "+producer+" "+model+" is on!");
     }
 }
