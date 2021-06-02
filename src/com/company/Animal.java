@@ -3,7 +3,7 @@ import java.io.File;
 
 public class Animal {
 
-    public String spieces;
+    final String spieces;
     private Double weight;
     public String name;
 
@@ -12,7 +12,7 @@ public class Animal {
     public Animal(String spieces){
 
         this.spieces = spieces;
-        switch (this.spieces = spieces){
+        switch (spieces){
 
             case "dog":
                 this.weight = 35.0;
