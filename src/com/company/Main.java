@@ -28,7 +28,11 @@ public class Main {
 
 	    System.out.println(me.firstName + " " + me.lastName + " " + "have" + " " + me.car.producer + " " + me.car.model + " " + me.car.year);
 
-
+		me.setSalary(1600.0);
+		me.setSalary(-160.0);
+		me.getSalary();
+		me.setSalary(7000.0);
+		me.getSalary();
 
 
     }
