@@ -6,6 +6,7 @@ public abstract class Device {
     Integer yearOfProduction;
 
     public String toString(){
+
         return producer+" "+model+" "+yearOfProduction;
     }
 

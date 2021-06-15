@@ -1,7 +1,7 @@
 package com.company;
 import java.io.File;
 
-public class Animal {
+public class Animal implements selleable {
 
     final String spieces;
     private Double weight;
@@ -49,7 +49,36 @@ public class Animal {
             System.out.println("You are crazy, how dead pet can walk?");
         }
     }
-    public String toString(){
-        return spieces+" "+weight+" "+name;
+    public String toString() {
+        return spieces + " " + weight + " " + name;
+    }
+
+    @Override
+    public void sell(Human seller, Human buyer, Double price) {
+        boolean isBuyerHaveMoney;
+        boolean isSellerHaveMoney;
+
+        if (seller.getAnimal() == null ){
+            System.out.println("Seller don't have a pet....!");
+            isSellerHasAnimal = false;
+        }
+        else{
+            isSellerHasAnimal = true;
+        }
+        if (buyer.getCash() < price){
+            System.out.println("Buyer can't afford this one!");
+            isBuyerHasMoney = false;
+        }
+        else{
+            isBuyerHasMoney = true;
+        }
+        if (isBuyerHasMoney && isSellerHasAnimal){
+            buyer.subtractCash(price);
+            seller.addCash(price);;
+            buyer.setAnimal(seller.getAnimal());
+            System.out.println("Buyer got a pet " + buyer.getAnimal().toString());
+            seller.setAnimal(null);
+            System.out.println("We removed sellers pet");
+        }
     }
 }

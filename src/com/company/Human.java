@@ -1,5 +1,6 @@
 package com.company;
 import com.company.devices.Car;
+import com.company.devices.Phone;
 import java.util.Date;
 
 public class Human {
@@ -9,12 +10,33 @@ public class Human {
     Integer age;
     String sex;
     private Double salary;
+    private Double cash;
+    private Phone phone;
 
     public Double getSalary(){
 
         System.out.println("Date when you checked about your salary: " + new Date());
         System.out.println("Your salary current level: " +this.salary);
         return salary;
+    }
+    public Phone getPhone(){
+        return this.phone;
+    }
+    public void setPhone(Phone phone){
+        this.phone = phone;
+    }
+
+    public Double getCash(){
+        return this.cash;
+    }
+    public void addCash(Double cash){
+        this.cash += cash;
+    }
+    public void subtractCash(Double cash){
+        this.cash -= cash;
+    }
+    public void setCash(Double cash){
+        this.cash = cash;
     }
 
     public void setSalary(Double salary){
@@ -29,12 +51,23 @@ public class Human {
         }
     }
 
-    Animal pet;
+    private Animal pet;
     private Car car;
 
     public Car getCar(){
+
         return this.car;
     }
+    public void setCar(Car car){
+        this.car = car;
+    }
+    public Animal getAnimal(){
+        return this.pet;
+    }
+    public void setAnimal(Animal pet ){
+        this.pet = pet;
+    }
+
     public void buyCar(Car car){
         if(this.salary > car.valueCar){
             System.out.println("You can afford that car. It's now yours!");
