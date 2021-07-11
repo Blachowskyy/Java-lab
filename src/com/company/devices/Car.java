@@ -1,19 +1,17 @@
 package com.company.devices;
+import java.util.Calendar;
 import com.company.Human;
 import com.company.selleable;
 
-public class Car extends Device implements selleable {
-
+public abstract class Car extends Device implements selleable {
     final String producer;
     final String model;
     public Double valueCar;
-
-
-    public Car(String producer, String model) {
+    public Car(String producer, String model, Integer productionYear) {
         this.producer = producer;
         this.model = model;
+        this.yearOfProduction = productionYear;
     }
-
     public boolean equals(Object o) {
         if (this == o) {
             return true;
@@ -24,16 +22,14 @@ public class Car extends Device implements selleable {
         return producer == car.producer &&
                 model == car.model;
     }
-
     public String toString() {
         return producer + " " + model + " " + valueCar;
     }
-
+    abstract void refuel();
     @Override
     public void turnOn() {
         System.out.println("The engine of " + producer + " " + model + " is on!");
     }
-
     public void sell(Human seller, Human buyer, Double price) {
         boolean isBuyerHasMoney;
         boolean isSellerHasCar;

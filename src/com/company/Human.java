@@ -5,7 +5,6 @@ import com.company.devices.Phone;
 import java.util.Date;
 
 public class Human {
-
     String firstName;
     String lastName;
     Integer age;
@@ -13,9 +12,7 @@ public class Human {
     private Double salary;
     private Double cash;
     private Phone phone;
-
     public Double getSalary(){
-
         System.out.println("Date when you checked about your salary: " + new Date());
         System.out.println("Your salary current level: " +this.salary);
         return salary;
@@ -26,7 +23,6 @@ public class Human {
     public void setPhone(Phone phone){
         this.phone = phone;
     }
-
     public Double getCash(){
         return this.cash;
     }
@@ -39,7 +35,6 @@ public class Human {
     public void setCash(Double cash){
         this.cash = cash;
     }
-
     public void setSalary(Double salary){
         if (salary < 0.0){
             System.out.println("Nobody will work for free!!!");
@@ -51,12 +46,9 @@ public class Human {
             this.salary = salary;
         }
     }
-
     private Animal pet;
     private Car car;
-
     public Car getCar(){
-
         return this.car;
     }
     public void setCar(Car car){
@@ -68,7 +60,6 @@ public class Human {
     public void setAnimal(Animal pet ){
         this.pet = pet;
     }
-
     public void buyCar(Car car){
         if(this.salary > car.valueCar){
             System.out.println("You can afford that car. It's now yours!");
@@ -81,9 +72,6 @@ public class Human {
         else {
             System.out.println("Your's salary is to low. You can buy it when you raise it :)");
         }
-
-
-
     }
     public String toString(){
         return firstName+" "+lastName;
