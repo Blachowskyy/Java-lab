@@ -17,6 +17,9 @@ public class Human {
     }
     public void setCar(Car car, Integer garageNumber) {
         Garage[garageNumber] = car;
+        if (car != null){
+            car.addNewOwner(this);
+        }
     }
     public Animal getAnimal() {
         return this.pet;

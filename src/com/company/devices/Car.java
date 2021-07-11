@@ -1,12 +1,16 @@
 package com.company.devices;
+import java.util.Calendar;
+import java.util.List;
+import java.util.ArrayList;
 import com.company.Human;
 import com.company.selleable;
-import java.util.Calendar;
+
 public abstract class Car extends Device implements selleable {
     final String producer;
     final String model;
     public Double mileage;
     public Double value;
+    List<Human> ownersList = new ArrayList<Human>();
     public Car(String producer, String model, Integer productionYear) {
         this.producer = producer;
         this.model = model;
@@ -68,7 +72,7 @@ public abstract class Car extends Device implements selleable {
         } else {
             System.out.println("The buyer have not enough money");
         }
-        if (isBuyerHasFreeGarage && isBuyerHasMoney && isSellerHasACar) {
+        if (isBuyerHasFreeGarage && isBuyerHasMoney && isSellerHasACar && checkOwner() == seller) {
             buyer.setCar(this, buyerGarageIndex);
             seller.setCar(null, sellerGarageIndex);
             System.out.println("Car have been passed");
@@ -76,6 +80,38 @@ public abstract class Car extends Device implements selleable {
             seller.addCash(price);
             System.out.println("Money transfer is complete");
             System.out.println("Transaction complete, the car is now in buyers garage: " + buyerGarageIndex);
+        }
+    }
+    public void addNewOwner(Human owner){
+        this.ownersList.add(owner);
+        System.out.println("Dodano nowego właściciela do listy właścicieli pojazdu.");
+    }
+    public Human checkOwner(){
+        return ownersList.get(ownersList.size()-1);
+    }
+    public boolean checkIsHumanOnTheOwnersList(Human owner){
+        return ownersList.contains(owner);
+    }
+    public boolean isHuman1SelltoHuman2Car(Human h1, Human h2){
+        if(checkIsHumanOnTheOwnersList(h1) && checkIsHumanOnTheOwnersList(h2)){
+            Integer indexH1 = ownersList.indexOf(h1);
+            Integer indexH2 = ownersList.indexOf(h2);
+            if(indexH1+1 == indexH2){
+                return true;
+            }else return false;
+        }else return false;
+    }
+    public Integer countTransactions(){
+        if (ownersList.size() == 0 || ownersList.size() == 1){
+            return 0;
+        }else{
+            return ownersList.size() - 1;
+        }
+    }
+    public void showOwnerList(){
+        System.out.println("----Owners List:");
+        for(Human h : ownersList){
+            System.out.println(h.toString());
         }
     }
     @Override
