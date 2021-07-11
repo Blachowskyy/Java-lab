@@ -80,6 +80,6 @@ public abstract class Car extends Device implements selleable {
     }
     @Override
     public void turnOn() {
-        System.out.println(producer + " " + model + "is turned on now");
+        System.out.println(producer + " " + model + " " + "is turned on now");
     }
 }

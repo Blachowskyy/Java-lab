@@ -106,7 +106,7 @@ public class Human {
     public void showCarsInGarage() {
         for (Car car : Garage) {
             if (car == null) {
-                System.out.println("miejsce w garażu puste");
+                System.out.println("Empty space in garage");
             } else {
                 System.out.println(car.toString());
             }

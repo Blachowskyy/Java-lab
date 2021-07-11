@@ -16,6 +16,7 @@ public class Main {
 		human1.setCar(car3, 2);
 		car2.refuel();
 		car3.refuel();
+		car2.turnOn();
 		System.out.println("Cars in your garage:");
 		human1.showCarsInGarage();
 		System.out.println("Sorted cars in your garage:");
