@@ -1,10 +1,5 @@
 package com.company;
-import com.company.Human;
-import com.company.creatures.*;
 import com.company.devices.*;
-import java.util.ArrayList;
-import java.util.List;
-
 public class Main {
 	public static void main(String[] args) {
 		Diesel car1 = new Diesel("Volvo", "V70", 2000);
@@ -23,7 +18,7 @@ public class Main {
 		human1.sortCarsInGarageByValue();
 		human1.showCarsInGarage();
 		Human human2 = new Human("Piotrek", "Piszczyglowa");
-		human2.setCash(14000.0);
+		human2.setCash(10.0);
 		car1.showOwnerList();
 		System.out.println("Owner of the Volvo: " + car1.checkOwner().toString());
 		car1.sell(human1,human2,4000.0);
@@ -45,5 +40,35 @@ public class Main {
 		System.out.println("How many times the Volvo was selled? " + car1.countTransactions());
 		System.out.println("The final owner of the Vovlo: " + car1.checkOwner().toString());
 		car1.showOwnerList();
+		Phone phone1 = new Phone("Xiaomi", "Mi10", 2020);
+		phone1.setOwner(human1);
+		Phone phone2 = new Phone("Iphone", "11", 2021);
+		phone2.setOwner(human2);
+		Application app1 = new Application("Facebook", "5.0.4", 0.0);
+		Application app2 = new Application("NicZaDarmoxD", "1.7.1", 60.0);
+		Application app3 = new Application("SubwaySurfer", "1.9.0", 0.0);
+		Application app4 = new Application("GooglePlay", "3.4.0", 0.0);
+		Application app5 = new Application("SygicNavigation", "0.33.45", 1.0);
+		Application app6 = new Application("ADblock", "0.9.0", 2.0);
+		phone1.installApp(app1);
+		phone2.installApp(app2);
+		phone1.installApp(app3);
+		phone1.installApp(app6);
+		phone2.installApp(app1);
+		phone1.installApp(app2);
+		phone1.installApp(app4);
+		phone2.installApp(app5);
+		System.out.println("Piotrek Piszczygłowa account state: " + human2.getCash());
+		phone1.showInstalledApps();
+		phone2.showInstalledApps();
+		System.out.println("Xiaomi Mi10:  " + app4.getName() + " is installed? " + phone1.isAppInstalled(app2));
+		System.out.println("Iphone 11 " + app2.getName() + " is installed? " + phone2.isAppInstalled(app2));
+		System.out.println("Is Facebook installed on Xiaomi? " + phone1.isAppInstalled("Facebook"));
+		phone1.showInstalledFreeApps();
+		phone2.showInstalledFreeApps();
+		System.out.println("Value of installed apps in Xiaomi: " + phone1.valueOfInstalledApps());
+		System.out.println("Value of installed apps in Iphone: " + phone2.valueOfInstalledApps());
+		System.out.println();
+		phone1.showInstalledAppsAlphabetically();
 	}
 }
