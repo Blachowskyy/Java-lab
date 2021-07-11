@@ -1,9 +1,9 @@
 package com.company.devices;
+import com.company.Human;
 
 public class Diesel extends Car {
     public Diesel (String producer, String model, Integer productionYear){
         super(producer,model, productionYear);
-        this.yearOfProduction = productionYear;
         System.out.println("We have a diesel engine car :)");
     }
     @Override

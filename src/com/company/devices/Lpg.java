@@ -1,4 +1,5 @@
 package com.company.devices;
+import com.company.Human;
 
 public class Lpg extends Car {
     public Lpg(String producer, String model, Integer productionYear){
